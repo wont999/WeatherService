@@ -14,17 +14,15 @@ Weather XmlService::getWeather(std::string s)
         as_string(); //  Киров
     double lon = node.child("city").child("coord").
         attribute("lon").
-        as_int(); // 49.6601
+        as_double(); // 49.6601
     double	lat = node.child("city").child("coord"). // 58.5966
         attribute("lat").
-        as_int();
-
+        as_double();
     double temperature = node.child("temperature").
         attribute("value").
         as_double(); // 5.69
     std::string weather = node.child("weather").
-        attribute("value").
-        as_string(); // дождь
+        attribute("value").as_string(); // дождь
     double windSpeed = node.child("wind").
         child("speed").attribute("value").
         as_double();// 4.27
